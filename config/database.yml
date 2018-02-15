@@ -1,0 +1,8 @@
+development:
+  url: <%= StellarWatcherApp::Config.database_url %>
+
+test:
+  url: <%= StellarWatcherApp::Config.database_url %>
+
+production:
+  url: <%= StellarWatcherApp::Config.database_url %>

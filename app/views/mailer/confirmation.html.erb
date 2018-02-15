@@ -1,0 +1,21 @@
+<p>
+  Hi!
+</p>
+
+<p>
+  We're sending this message to confirm your email address.
+</p>
+
+<p class="sw-ws">
+  <%= link_to "Confirm e-mail address", confirmation_url(@token), class: "sw-button" %>
+</p>
+
+<p>
+  If you didn't sign up for <%= link_to "Stellar Watcher", root_url %>,
+  just ignore this message.
+</p>
+
+<p>
+  Cheers,<br>
+  Stellar Watcher
+</p>

@@ -1,0 +1,9 @@
+<h1>Unsubscribe</h1>
+
+<p>
+  Are you sure you want to stop receiving
+  notifications on <strong><%= @watcher.email %></strong>?
+</p>
+
+<%= button_to "Yes, I'm sure!", unsubscribe_path(params[:token]), method: "delete" %>
+<%= link_to "No, I've changed my mind!", root_path %>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      .sw {
+        background: #f3f7fa;
+        font-family: sans-serif;
+        padding: 25px;
+      }
+
+      .sw-container {
+        background: #fff;
+        max-width: 700px;
+        padding: 30px;
+        margin: 0 auto;
+      }
+
+      .sw-logo {
+        text-align: center;
+      }
+
+      .sw-logo img {
+        width: 100%;
+        max-width: 300px;
+        border: none;
+      }
+
+      .sw a {
+        color: #08b5e5;
+      }
+
+      .sw .sw-button {
+        border: 2px solid #08b5e5;
+        background: #08b5e5;
+        font-family: inherit;
+        font-size: 14px;
+        padding: 20px 30px;
+        font-weight: 900;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        box-shadow: 6px 6px 0 #eee;
+      }
+
+      .sw .sw-ws {
+        padding: 50px 0;
+      }
+
+      .sw .sw-footer {
+        text-align: center;
+      }
+
+      .sw .sw-footer a {
+        color: #999;
+      }
+
+      .sw code {
+        font-size: 17px;
+      }
+    </style>
+  </head>
+
+  <body class="sw">
+    <div class="sw-container">
+      <div class="sw-logo">
+        <img src="https://stellarwatcher.com/logo.svg" alt="Stellar Watcher">
+      </div>
+
+      <%= yield %>
+    </div>
+
+    <p class="sw-footer">
+      <%= link_to "Unsubscribe", unsubscribe_url(@unsubscribe_token) %>
+    </p>
+  </body>
+</html>

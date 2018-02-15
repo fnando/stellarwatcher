@@ -1,0 +1,4 @@
+en:
+  operations:
+    one: 1 new operation
+    other: "%{count} new operations"
