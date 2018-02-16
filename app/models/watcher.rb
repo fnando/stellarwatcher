@@ -16,6 +16,12 @@ class Watcher < ApplicationRecord
       .where(["next_fetch <= NOW()"])
   }
 
+  scope :to_be_purged, -> {
+    all
+      .where(email_confirmed: false)
+      .where(["created_at < ?", 1.month.ago])
+  }
+
   private def set_default_values
     self.next_fetch = Time.now
   end
