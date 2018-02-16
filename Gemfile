@@ -17,7 +17,7 @@ gem "ar-check"
 gem "encrypt_attr"
 gem "normalize_attributes"
 
-gem "sidekiq"
+gem "sidekiq", require: %w[sidekiq sidekiq/web]
 gem "parsel"
 gem "aitch"
 gem "clockwork"

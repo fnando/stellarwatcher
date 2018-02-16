@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get "unsubscribe/:token" => "subscriptions#remove", as: "unsubscribe"
   delete "unsubscribe/:token" => "subscriptions#destroy"
+
+  mount Sidekiq::Web => "/sidekiq"
 end

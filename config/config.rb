@@ -21,5 +21,9 @@ module StellarWatcherApp
 
     # Set the horizon environment.
     mandatory :horizon_environment, string
+
+    # Set sidekiq creds.
+    optional :sidekiq_username, string
+    optional :sidekiq_password, string
   end
 end
