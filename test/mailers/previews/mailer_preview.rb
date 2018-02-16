@@ -1,7 +1,8 @@
 # Preview all emails at http://localhost:3000/rails/mailers/mailer
 class MailerPreview < ActionMailer::Preview
   def notify
-    Mailer.notify(watcher.id, Time.now.iso8601, 1)
+    operations_count = (1..5).to_a.sample
+    Mailer.notify(watcher.id, Time.now.iso8601, operations_count)
   end
 
   def confirmation
