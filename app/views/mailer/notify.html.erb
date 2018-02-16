@@ -1,16 +1,20 @@
-<p>Hi!</p>
+<div class="sw-content">
+  <p>Hi!</p>
 
-<p>
-  We detected <strong><%= @operations_description %></strong> on your wallet
-  <code><%= shorten_wallet_address(@watcher.wallet_address) %></code> since
-  <%= l(@since) %>.
-</p>
+  <p>
+    We detected <strong><%= @operations_description %></strong> on your wallet
+    <code><%= shorten_wallet_address(@watcher.wallet_address) %></code> since
+    <%= l(@since) %>.
+  </p>
 
-<p class="sw-ws">
-  <%= link_to "Review wallet operations", @explorer_url, class: "sw-button" %>
-</p>
+  <p class="sw-ws">
+    <%= link_to "Review wallet operations", @explorer_url, class: "sw-button" %>
+  </p>
 
-<p>
-  Cheers,<br>
-  Stellar Watcher
-</p>
+  <p>
+    Cheers,<br>
+    Stellar Watcher
+  </p>
+</div>
+
+<%= render "donation" %>
