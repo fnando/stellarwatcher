@@ -7,7 +7,6 @@ gem "dotenv"
 gem "env_vars"
 gem "puma"
 gem "rails-env"
-gem "secure_headers"
 
 gem "bcrypt"
 gem "pg", "~> 0.18"
