@@ -182,6 +182,7 @@ GEM
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
+    validators (2.6.0)
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -218,6 +219,7 @@ DEPENDENCIES
   rails_stdout_logging
   selenium-webdriver
   sidekiq
+  validators
 
 RUBY VERSION
    ruby 2.5.0p0

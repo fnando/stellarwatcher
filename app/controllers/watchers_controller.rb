@@ -14,9 +14,23 @@ class WatchersController < ApplicationController
     end
   end
 
+  def edit
+    @watcher = Watcher.find(params[:id])
+  end
+
+  def update
+    @watcher = Watcher.find(params[:id])
+
+    if @watcher.update(watcher_params)
+      redirect_to edit_watcher_path(@watcher), notice: "Your subscription has been updated!"
+    else
+      render :edit
+    end
+  end
+
   private def watcher_params
     params
       .require(:watcher)
-      .permit(:frequency, :email, :wallet_address)
+      .permit(:frequency, :email, :wallet_address, :webhook_url)
   end
 end

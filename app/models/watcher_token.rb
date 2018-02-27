@@ -1,4 +1,4 @@
-class ConfirmationToken
+class WatcherToken
   def self.create(watcher_id)
     Parsel.encrypt(StellarWatcherApp::Config.encryption_secret_token, watcher_id)
   end

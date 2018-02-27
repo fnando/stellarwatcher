@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180215055613) do
+ActiveRecord::Schema.define(version: 20180227030650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180215055613) do
     t.datetime "last_result_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "encrypted_webhook_url"
     t.index ["email_digest", "wallet_address_digest"], name: "index_watchers_on_email_digest_and_wallet_address_digest", unique: true
   end
 

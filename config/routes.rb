@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   post "confirmation/:id/pending" => "confirmations#resend"
   get "confirmation/:token" => "confirmations#confirm", as: "confirmation"
 
+  get "subscriptions/:token" => "subscriptions#edit", as: "edit_subscription"
   get "unsubscribe/:token" => "subscriptions#remove", as: "unsubscribe"
   delete "unsubscribe/:token" => "subscriptions#destroy"
 

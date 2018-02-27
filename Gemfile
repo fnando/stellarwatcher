@@ -15,6 +15,7 @@ gem "ar-timestamptz"
 gem "ar-check"
 gem "encrypt_attr"
 gem "normalize_attributes"
+gem "validators"
 
 gem "sidekiq", require: %w[sidekiq sidekiq/web]
 gem "parsel"

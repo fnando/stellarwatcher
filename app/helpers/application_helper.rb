@@ -9,4 +9,8 @@ module ApplicationHelper
   def shorten_wallet_address(address)
     address.gsub(/\A(.{5}).*?(.{5})\z/, "\\1...\\2")
   end
+
+  def delivered_notifications_count
+    @delivered_notifications_count ||= GetNotificationCount.call
+  end
 end

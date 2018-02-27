@@ -1,0 +1,23 @@
+<%= form_for watcher do |f| %>
+  <div>
+    <%= f.label :email, "What's your e-mail address?" %>
+    <%= f.email_field :email, placeholder: "E.g. john@example.com" %>
+    <%= error_tag(watcher, :email) %>
+  </div>
+
+  <div>
+    <%= f.label :webhook_url, "Also notify this url" %>
+    <%= f.url_field :webhook_url, placeholder: "E.g. https://example.com/stellar-webhook" %>
+    <%= error_tag(watcher, :webhook_url) %>
+  </div>
+
+  <div>
+    <%= f.label :wallet_address, "What's your wallet address?" %>
+    <%= f.text_field :wallet_address, placeholder: "E.g. GDNVEK4R…", spellcheck: "false", autocorrect: "off" %>
+    <%= error_tag(watcher, :wallet_address) %>
+  </div>
+
+  <div>
+    <%= f.submit "NOTIFY ME" %>
+  </div>
+<% end %>

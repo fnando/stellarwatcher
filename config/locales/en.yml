@@ -2,3 +2,13 @@ en:
   operations:
     one: 1 new operation
     other: "%{count} new operations"
+
+  activerecord:
+    errors:
+      messages:
+        invalid_url: is not a valid url
+        disposable_email: cannot be used
+
+  delivered_notifications:
+    one: One notification delivered so far!
+    other: "%{number} notifications delivered so far!"

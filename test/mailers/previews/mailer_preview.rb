@@ -21,7 +21,7 @@ class MailerPreview < ActionMailer::Preview
 
   def watcher
     Watcher
-      .create_with(wallet_address: wallet_address, email: "john@example.com")
+      .create_with(wallet_address: wallet_address, email: "john@example.com", webhook_url: "https://example.com")
       .find_or_create_by(wallet_address_digest: wallet_address_digest)
   end
 end

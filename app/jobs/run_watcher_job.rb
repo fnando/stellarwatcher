@@ -5,6 +5,7 @@ class RunWatcherJob < ApplicationJob
 
     watcher.cursor = cursor
     watcher.next_fetch = 1.hour.from_now
+    since = watcher.last_result_at
 
     return watcher.save! unless operations.any?
 
@@ -13,9 +14,17 @@ class RunWatcherJob < ApplicationJob
                       .sort
                       .last
 
-    since = watcher.last_result_at
+    webhook_url = watcher.webhook_url
+
+    operations.each do |operation|
+      NotifyWebhookJob.perform_later(webhook_url, operation["transaction_hash"])
+    end if webhook_url
+
+    Mailer.notify(watcher.id, since.iso8601, operations.size).deliver_later
+
     watcher.last_result_at = last_result_at
     watcher.save!
-    Mailer.notify(watcher.id, since.iso8601, operations.size).deliver_later
+
+    UpdateNotificationCounter.call
   end
 end
