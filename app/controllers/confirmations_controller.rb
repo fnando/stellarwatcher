@@ -13,7 +13,7 @@ class ConfirmationsController < ApplicationController
   end
 
   def confirm
-    watcher_id = ConfirmationToken.parse(params[:token])
+    watcher_id = WatcherToken.parse(params[:token])
 
     unless watcher_id
       redirect_to root_path, alert: "Invalid confirmation token."
