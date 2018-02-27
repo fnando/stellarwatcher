@@ -17,7 +17,7 @@ class RunWatcherJob < ApplicationJob
     webhook_url = watcher.webhook_url
 
     operations.each do |operation|
-      NotifyWebhookJob.perform_later(webhook_url, operation["transaction_hash"])
+      NotifyWebhookJob.perform_later(webhook_url, operation["id"])
     end if webhook_url
 
     Mailer.notify(watcher.id, since.iso8601, operations.size).deliver_later

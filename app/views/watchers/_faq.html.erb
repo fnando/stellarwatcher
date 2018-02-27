@@ -6,6 +6,12 @@
     I will retry failures with an exponential backoff using the formula <code>(retry_count ** 4) + 15 + (rand(30) * (retry_count + 1))</code> (i.e. 15, 16, 31, 96, 271, ... seconds + a random amount of time). It will perform 25 retries over approximately 21 days before giving up.
   </p>
 
+  <p>
+    You'll receive one notification for each operation containing <code>operation_id=:id</code> as the <code>POST</code> data.
+    You can then make a request to <code>https://horizon.stellar.org/operations/:id</code> to retrieve all the
+    information related to that operation.
+  </p>
+
   <h1>Privacy</h1>
 
   <p>

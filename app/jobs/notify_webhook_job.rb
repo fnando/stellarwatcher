@@ -1,8 +1,8 @@
 class NotifyWebhookJob < ApplicationJob
-  def perform(webhook_url, transaction_hash)
+  def perform(webhook_url, operation_id)
     HttpClient.post do
       url webhook_url
-      params transaction_hash: transaction_hash
+      params operation_id: operation_id
       options expect: 202
     end
 
