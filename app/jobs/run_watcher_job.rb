@@ -24,7 +24,5 @@ class RunWatcherJob < ApplicationJob
 
     watcher.last_result_at = last_result_at
     watcher.save!
-
-    UpdateNotificationCounter.call
   end
 end

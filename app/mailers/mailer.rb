@@ -13,6 +13,8 @@ class Mailer < ApplicationMailer
     @since = Time.parse(timestamp)
     @watcher_token = WatcherToken.create(@watcher.id)
 
+    UpdateNotificationCounter.call
+
     mail to: @watcher.email, subject: "[STELLAR WATCHER] We detected #{@operations_description} on your wallet"
   end
 end
