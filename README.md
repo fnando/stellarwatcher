@@ -1,24 +1,9 @@
-# README
+# Test accounts
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+Public Key  GC2VT4JQQQAFFEBIS33TR77BFLADHEHJ2TG3I32WEKDHOBBFSS66JU7U
+Secret Key  SCTVQYRNTPYIC3YICDBS24L7VW4B4QMQGZ3BWR7HXP4VHZK4UNPZVDMH
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Public Key  GAWF4CW6GABVTXYVJY2DUH52Y3K3A34E75YVLIYAKYEC4ONU4U5ZNHV7
+Secret Key  SCFHYNMY6ZKNBLNDAA7ZNMETV26YUMHNMIXTLYJ2QJRKW6SAB3ITKP2O
+```
