@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   get "unsubscribe/:token" => "subscriptions#remove", as: "unsubscribe"
   delete "unsubscribe/:token" => "subscriptions#destroy"
 
+  get ".well-known/stellar.toml" => "federation#toml",
+      defaults: {format: "toml"},
+      constraints: {format: /toml/}
+
   mount Sidekiq::Web => "/sidekiq"
 end
