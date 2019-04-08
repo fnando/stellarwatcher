@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 ruby "2.6.2"
 
-gem "rails", "5.1.6"
+gem "rails", "5.2.3"
 
 gem "dotenv"
 gem "env_vars"
@@ -9,7 +9,7 @@ gem "puma"
 gem "rails-env"
 
 gem "bcrypt"
-gem "pg", "~> 0.18"
+gem "pg"
 gem "ar-uuid"
 gem "ar-timestamptz"
 gem "ar-check"
@@ -18,9 +18,9 @@ gem "normalize_attributes"
 gem "validators"
 
 gem "sidekiq", require: %w[sidekiq sidekiq/web]
+gem "sidekiq-clockwork"
 gem "parsel"
 gem "aitch"
-gem "clockwork"
 
 group :production do
   gem "lograge"

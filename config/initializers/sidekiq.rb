@@ -7,3 +7,8 @@ Sidekiq::Web.use Rack::Auth::Basic do |username, password|
   ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(username), ::Digest::SHA256.hexdigest(StellarWatcherApp::Config.sidekiq_username)) &
     ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(password), ::Digest::SHA256.hexdigest(StellarWatcherApp::Config.sidekiq_password))
 end if Rails.env.production?
+
+Sidekiq::Clockwork.run do
+  every(1.minute) { EnqueueWatchersJob.perform_later }
+  every(1.hour) { RemoveUnconfirmedWatchersJob.perform_later }
+end
