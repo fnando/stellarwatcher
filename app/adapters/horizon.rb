@@ -30,7 +30,7 @@ class Horizon
       response = Aitch.get(url, params)
       data = response.data.dig("_embedded", "records")
 
-      data.each do |operation|
+      data&.each do |operation|
         cursor = Integer(operation["paging_token"])
         fetched_results = true
         results << operation

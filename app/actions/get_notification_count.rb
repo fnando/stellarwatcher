@@ -1,7 +1,6 @@
 class GetNotificationCount
   def self.call
-    Sidekiq.redis do |connection|
-      Integer(connection.get(:delivered_notifications_count) || 0)
-    end
+    stats = Stats.first!
+    stats.deliveries_count
   end
 end

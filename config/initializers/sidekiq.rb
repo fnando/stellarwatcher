@@ -10,5 +10,6 @@ end if Rails.env.production?
 
 Sidekiq::Clockwork.run do
   every(1.minute) { EnqueueWatchersJob.perform_later }
+  every(1.minute) { EnqueueWatchersWithoutCursorJob.perform_later }
   every(1.hour) { RemoveUnconfirmedWatchersJob.perform_later }
 end

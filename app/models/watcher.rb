@@ -13,7 +13,6 @@ class Watcher < ApplicationRecord
   scope :to_be_enqueued, -> {
     all
       .where(email_confirmed: true)
-      .where.not(cursor: nil)
       .where(["next_fetch <= NOW()"])
   }
 
@@ -21,6 +20,11 @@ class Watcher < ApplicationRecord
     all
       .where(email_confirmed: false)
       .where(["created_at < ?", 1.month.ago])
+  }
+
+  scope :without_cursor, -> {
+    all
+      .where(cursor: nil)
   }
 
   webhook_url_method = instance_method(:webhook_url=)

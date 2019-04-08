@@ -1,7 +1,5 @@
 class UpdateNotificationCounter
   def self.call
-    Sidekiq.redis do |connection|
-      connection.incr(:delivered_notifications_count)
-    end
+    Stats.update_all("deliveries_count = deliveries_count + 1")
   end
 end
