@@ -108,7 +108,7 @@ GEM
     pry-remote (0.1.8)
       pry (~> 0.9)
       slop (~> 3.0)
-    puma (3.12.1)
+    puma (3.12.4)
     rack (2.0.7)
     rack-protection (2.0.5)
       rack
